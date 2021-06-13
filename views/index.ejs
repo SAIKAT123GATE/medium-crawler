@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="reset.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Medium Crawler</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="heading">
+            <h2>Medium Crawler</h2>
+        </div>
+        <div class="crawl-form">
+            <input type="text" name="crawltag" id="message" placeholder="Enter tags here" />
+            <button type="button" id="crawlbutton">Crawl</button>
+        </div>
+    </header>
+    <section>
+        <div class="relatedtags" id="relatedtags">
+
+        </div>
+
+        <div class="container" id="container">
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        var button = document.getElementById('crawlbutton');
+        var input = document.getElementById("message");
+            input.addEventListener("keyup", function(event) {
+               
+              if (event.keyCode === 13) {
+              event.preventDefault();
+                button.click();
+              }
+          });
+        button.addEventListener("click", () => {
+            socket.emit('sendtopic', document.getElementById('message').value);
+        })
+
+        socket.on("sendrelatedpost", (post) => {
+            //console.log(post);
+            document.getElementById('relatedtags').innerHTML = "";
+            document.getElementById('container').innerHTML = "";
+            for (var i = 0; i < post.relatedlength; i++) {
+                var h3 = document.createElement("h3");
+                h3.innerHTML = "# " + post.related[i];
+                document.getElementById('relatedtags').appendChild(h3);
+            }
+
+            for (var l = 0; l < post.postlength; l++) {
+                var div = document.createElement("div");
+                div.className = "cards";
+                div.id = "cards" + l;
+                div.innerHTML = "<h6>Pending.....</h6>";
+                document.getElementById('container').appendChild(div);
+            }
+
+        });
+
+        //fetching carwl status
+
+        socket.on("startedfetching", (data) => {
+            var id = "cards" + data.idno;
+            document.getElementById(id).innerHTML = "<h6>" + data.msg + "</h6>";
+        })
+
+
+        //getting the post
+
+        socket.on("senddata", (data) => {
+            var id = "cards" + data.obj.id;
+            console.log(id);
+            var str="";
+            var particularcard = document.getElementById(id);
+            for(var k=0;k<data.obj.postrelatedtags.length;k++){
+                
+                str+="<li>#"+data.obj.postrelatedtags[k]+"</li>";
+                
+            }
+
+            comments="";
+          for(var f=0;f<data.obj.finalcomments.length;f++){
+            comments+="<li> <h5>"+ data.obj.finalcomments[f].name+"</h5><p>"+ data.obj.finalcomments[f].comment+"</p></li>";
+          }
+            //console.log("str",str);
+            particularcard.innerHTML = "<div class='postpreview'><figure><img src =" + data.obj.imageurl + "></figure ><div class='details'><h2>" + data.obj.titlename + "</h2><h5>Author : " + data.obj.username + "</h5><h5>Reading Time : " + data.obj.readingtime + "min Read</h5><h5>Related Tags : </h5><ul class='reltags'>"+str+"</ul><h5>Time to crawl : " + data.obj.crawltime + "ms</h5><i onclick='showpost(" + data.obj.id + ")' class='flex fa fa-eye'><h5> Click to read post</h5></i></div></div ><div id='"+data.obj.id+"'class='post'><div> <i onclick='closepost(" + data.obj.id + ")' class='fa fa-close'> </i><p>"+data.obj.articles+"</p><h2>Responses</h2><ul>"+comments+"</ul></div ></div >"
+        });
+
+
+
+        //showpost function
+        function showpost(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+
+        //function closepost
+
+        function closepost(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
