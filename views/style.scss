@@ -32,6 +32,10 @@ header{
     }
 }
 #message{
+    width:100%;
+    @media only screen and (min-width:1024px){
+        width:auto;
+    }
     font-size: 1.2rem;
     padding: 0.6rem 1rem;
     outline:none;
@@ -41,29 +45,46 @@ header{
     }
 }
 button{
+    margin-top: 1rem;
+    @media only screen and (min-width:768px){
+        margin-top: 0;
+        margin-left: 0.5rem;
+    }
     padding: 0.6rem 1rem;
-    margin-left: 0.5rem;
+   
     font-weight: bold;
     font-size: 1.2rem;
     cursor: pointer;
 }
 .crawl-form{
+    display: block;
+    @media only screen and (min-width:768px){
     display: flex;
     justify-content: center;
     align-items: center;
+    }
 }
 
 section{
+    padding: 2rem 1rem;
+    @media only screen and (min-width:768px){
     padding: 2rem 2rem;
+    }
     .relatedtags{
         display: flex;
+        justify-content: start;
+        @media only screen and (min-width:1024px){
         justify-content: center;
+        }
         align-items: center;
         flex-wrap: wrap;
         h3{
             background-color:  rgb(22, 125, 221);
             padding: 0.4rem 1rem;
+            margin:0.2rem 0.2rem 0.2rem 0rem;
+            @media only screen and (min-width:768px){
             margin:0.2rem 0.4rem;
+            }
             font-size: 1.5rem;
             border-radius: 0.5rem;
             color: white;
@@ -74,8 +95,13 @@ section{
 .cards{
     background-color: #070707d4;
     padding: 1rem;
+    @media only screen and (min-width:1024px){
     width:48%;
+    }
+    margin-top: 0.5rem;
+    @media only screen and (min-width:1024px){
     margin-bottom: 1rem;
+    }
     h6{
         font-size: 1.5rem;
         
@@ -83,10 +109,13 @@ section{
     }
 }
 .container{
+    display: block;
+    @media only screen and (min-width:1024px){
     display: flex;
     justify-content: space-around;
     margin-top: 1rem;
     flex-wrap: wrap;
+    }
 }
 
 .details{
@@ -107,10 +136,15 @@ section{
 
 .reltags{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 0.7rem;
     margin-bottom: 0.7rem;
     
     li{
+        margin-bottom: 0.4rem;
+        @media only screen and (min-width:1024px){
+            margin-bottom: 0;
+        }
         background-color: #a8a7a7;
         margin-right: 10px;
         padding: 0.4rem 1rem;

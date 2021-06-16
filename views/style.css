@@ -36,10 +36,17 @@ header {
 }
 
 #message {
+  width: 100%;
   font-size: 1.2rem;
   padding: 0.6rem 1rem;
   outline: none;
   border: 1px solid black;
+}
+
+@media only screen and (min-width: 1024px) {
+  #message {
+    width: auto;
+  }
 }
 
 #message::-webkit-input-placeholder {
@@ -59,36 +66,55 @@ header {
 }
 
 button {
+  margin-top: 1rem;
   padding: 0.6rem 1rem;
-  margin-left: 0.5rem;
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
 }
 
+@media only screen and (min-width: 768px) {
+  button {
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
+}
+
 .crawl-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .crawl-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 section {
-  padding: 2rem 2rem;
+  padding: 2rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    padding: 2rem 2rem;
+  }
 }
 
 section .relatedtags {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -96,20 +122,45 @@ section .relatedtags {
       flex-wrap: wrap;
 }
 
+@media only screen and (min-width: 1024px) {
+  section .relatedtags {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 section .relatedtags h3 {
   background-color: #167ddd;
   padding: 0.4rem 1rem;
-  margin: 0.2rem 0.4rem;
+  margin: 0.2rem 0.2rem 0.2rem 0rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
   color: white;
 }
 
+@media only screen and (min-width: 768px) {
+  section .relatedtags h3 {
+    margin: 0.2rem 0.4rem;
+  }
+}
+
 .cards {
   background-color: #070707d4;
   padding: 1rem;
-  width: 48%;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .cards {
+    width: 48%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cards {
+    margin-bottom: 1rem;
+  }
 }
 
 .cards h6 {
@@ -118,14 +169,20 @@ section .relatedtags h3 {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-top: 1rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: block;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-top: 1rem;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .details {
@@ -149,15 +206,24 @@ section .relatedtags h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 0.7rem;
   margin-bottom: 0.7rem;
 }
 
 .reltags li {
+  margin-bottom: 0.4rem;
   background-color: #a8a7a7;
   margin-right: 10px;
   padding: 0.4rem 1rem;
   border-radius: 0.1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .reltags li {
+    margin-bottom: 0;
+  }
 }
 
 .flex {
