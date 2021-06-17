@@ -4,6 +4,20 @@ header {
   padding: 3rem 2rem;
 }
 
+header h4 {
+  cursor: pointer;
+  border: 1px solid white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  margin-right: auto;
+}
+
 .posts h2 {
   font-size: 2rem;
   padding-bottom: 1rem;
