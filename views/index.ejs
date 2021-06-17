@@ -135,7 +135,7 @@
             //console.log(ul);
             
             //console.log("str",str);
-            particularcard.innerHTML = "<div class='postpreview'><figure><img src =" + data.obj.imageurl + "></figure ><div class='details'><h2>" + data.obj.titlename + "</h2><h5>Author : " + data.obj.username + "</h5><h5>Reading Time : " + data.obj.readingtime + "min Read</h5><h5>Time to crawl : " + data.obj.crawltime + "ms</h5><a href='/getpost/"+data.obj.postid+"'><i class='flex fa fa-eye'><h5> Click to read post</h5></i></a></div></div >";
+            particularcard.innerHTML = "<div class='postpreview'><figure><img src =" + data.obj.imageurl + "></figure ><div class='details'><h2>" + data.obj.titlename + "</h2><h5>Author : " + data.obj.username + "</h5><h5>Reading Time : " + data.obj.readingtime + "min Read</h5><h5>Time to crawl : " + data.obj.crawltime + "ms</h5><a href='/getpost/"+data.obj.postid+"/"+data.obj.username+"'><i class='flex fa fa-eye'><h5> Click to read post</h5></i></a></div></div >";
                 var h5=document.createElement('h5');
                 h5.className="classh5";
                 h5.innerHTML="Related Tags :";

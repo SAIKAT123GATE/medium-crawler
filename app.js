@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/getpost/:id", async(req, resp) => {
+app.get("/getpost/:id/:username", async(req, resp) => {
   var uri = "http://medium.com/post/" + req.params.id;
   //console.log(uri);
   function dorequest(uri) {
@@ -69,7 +69,7 @@ app.get("/getpost/:id", async(req, resp) => {
         for (var d = 0; d < resnamearray.length; d++) {
           for (var e = 0; e < commentarray.length; e++) {
             if (
-              resnamearray[d].id == commentarray[e].id 
+              resnamearray[d].id == commentarray[e].id  && resnamearray[d].name != req.params.username
               
             ) {
               finalcomments.push({
