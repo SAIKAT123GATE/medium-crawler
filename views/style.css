@@ -131,6 +131,7 @@ section .relatedtags {
 }
 
 section .relatedtags h3 {
+  cursor: pointer;
   background-color: #167ddd;
   padding: 0.4rem 1rem;
   margin: 0.2rem 0.2rem 0.2rem 0rem;
@@ -214,16 +215,11 @@ section .relatedtags h3 {
 
 .reltags li {
   margin-bottom: 0.4rem;
+  cursor: pointer;
   background-color: #a8a7a7;
   margin-right: 10px;
   padding: 0.4rem 1rem;
   border-radius: 0.1rem;
-}
-
-@media only screen and (min-width: 1024px) {
-  .reltags li {
-    margin-bottom: 0;
-  }
 }
 
 .flex {
@@ -299,5 +295,11 @@ section .relatedtags h3 {
 .post div ul li h5 {
   font-size: 1.3rem;
   font-weight: bold;
+}
+
+.classh5 {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

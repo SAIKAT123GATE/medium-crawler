@@ -79,6 +79,7 @@ section{
         align-items: center;
         flex-wrap: wrap;
         h3{
+            cursor: pointer;
             background-color:  rgb(22, 125, 221);
             padding: 0.4rem 1rem;
             margin:0.2rem 0.2rem 0.2rem 0rem;
@@ -142,9 +143,7 @@ section{
     
     li{
         margin-bottom: 0.4rem;
-        @media only screen and (min-width:1024px){
-            margin-bottom: 0;
-        }
+        cursor: pointer;
         background-color: #a8a7a7;
         margin-right: 10px;
         padding: 0.4rem 1rem;
@@ -220,4 +219,10 @@ section{
              }
          }
      }
+}
+
+.classh5{
+    color: white;
+    font-size: 1.2rem;
+    line-height: 2rem;
 }

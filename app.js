@@ -109,7 +109,7 @@ io.on('connection',async(socket)=>{
         var p= await axios.get(responseurl);
         //console.log("for comments",p);
         var response=JSON.parse(p.data.slice(16));
-        console.log(response);
+        //console.log(response);
         var flag=Object.keys(response.payload.references);
         //console.log(flag.length);
         
@@ -145,7 +145,7 @@ io.on('connection',async(socket)=>{
             finalcomments=[{name:"no response",comment:"no response till now for this post"}];
         }
 
-        console.log("final comments",finalcomments);
+        //console.log("final comments",finalcomments);
 
 
 
