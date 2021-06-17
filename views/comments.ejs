@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/comment.css">
+    <title>Medium Crawler</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="heading">
+            <h2>Medium Crawler</h2>
+        </div>
+    </header>
+    <section>
+        <div class="posts">
+            <h2>Post Description</h2>
+            <p><%= articles %></p>
+        </div>
+
+        <div class="comments">
+            <h2>Comments of the Post</h2>
+            <ol id="ul">
+                <% for(var i=0;i<finalcomments.length;i++){%> 
+                    <li>
+                        <h5><%= finalcomments[i].name %></h5>
+                        <p><%= finalcomments[i].comment %></p>
+                    </li>
+                    
+             <%}%>
+            </ol>
+        </div>
+    </section>
+</body>
+
+
+<script>
+    
+</script>
+
+</html>

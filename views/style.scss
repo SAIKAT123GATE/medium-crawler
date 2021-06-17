@@ -92,6 +92,10 @@ section{
         }
     }
 }
+a{
+    color:white;
+    text-decoration: none;
+}
 
 .cards{
     background-color: #070707d4;
@@ -163,62 +167,11 @@ section{
 }
 
 .post{
-    display: none;
-    padding: 1rem;
-    position: fixed;
-    left: 0%;
-  
-  
- 
-    top:0;
-    
-     background-color: rgba(1, 1, 1, 0.7);
-     z-index: 9999;
-     div{
-         padding: 1rem;
-         background-color: white;
-         p{
-             height: 50vh;
-             overflow-y: scroll;
-             font-size: 1.4rem;
-             line-height: 2rem;
-             margin-top: 0.5rem;
-             margin-bottom: 1rem;
-         }
-         i{
-             cursor: pointer;
-             color: rgb(22, 125, 221);
-         }
-
-         h2{
-             font-weight: bold;
-             font-size: 1.4rem;
-             padding-bottom: 1rem;
-             border-bottom:1px solid black;
-         }
-         ul{
-             height: 26vh;
-             overflow-y: scroll;
-             p{
-                 height: auto;
-                 margin:0;
-                 font-size: 1rem;
-                 line-height: 1.5rem;
-                 margin-bottom: 1.2rem;
-                 overflow:auto;
-                 
-             }
-             li{
-                margin-top: 1.2rem;
-                
-                border-bottom: 1px solid black;
-                h5{
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                }
-             }
-         }
-     }
+    h2{
+        font-size: 2rem;
+        font-weight: bold;
+        padding-bottom: 1rem;
+    }
 }
 
 .classh5{

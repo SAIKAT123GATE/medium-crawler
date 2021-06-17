@@ -146,6 +146,11 @@ section .relatedtags h3 {
   }
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .cards {
   background-color: #070707d4;
   padding: 1rem;
@@ -237,64 +242,10 @@ section .relatedtags h3 {
   cursor: pointer;
 }
 
-.post {
-  display: none;
-  padding: 1rem;
-  position: fixed;
-  left: 0%;
-  top: 0;
-  background-color: rgba(1, 1, 1, 0.7);
-  z-index: 9999;
-}
-
-.post div {
-  padding: 1rem;
-  background-color: white;
-}
-
-.post div p {
-  height: 50vh;
-  overflow-y: scroll;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.post div i {
-  cursor: pointer;
-  color: #167ddd;
-}
-
-.post div h2 {
+.post h2 {
+  font-size: 2rem;
   font-weight: bold;
-  font-size: 1.4rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid black;
-}
-
-.post div ul {
-  height: 26vh;
-  overflow-y: scroll;
-}
-
-.post div ul p {
-  height: auto;
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin-bottom: 1.2rem;
-  overflow: auto;
-}
-
-.post div ul li {
-  margin-top: 1.2rem;
-  border-bottom: 1px solid black;
-}
-
-.post div ul li h5 {
-  font-size: 1.3rem;
-  font-weight: bold;
 }
 
 .classh5 {

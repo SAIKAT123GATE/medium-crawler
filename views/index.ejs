@@ -133,12 +133,9 @@
                 p++;
             }
             //console.log(ul);
-            comments="";
-          for(var f=0;f<data.obj.finalcomments.length;f++){
-            comments+="<li> <h5>"+ data.obj.finalcomments[f].name+"</h5><p>"+ data.obj.finalcomments[f].comment+"</p></li>";
-          }
+            
             //console.log("str",str);
-            particularcard.innerHTML = "<div class='postpreview'><figure><img src =" + data.obj.imageurl + "></figure ><div class='details'><h2>" + data.obj.titlename + "</h2><h5>Author : " + data.obj.username + "</h5><h5>Reading Time : " + data.obj.readingtime + "min Read</h5><h5>Time to crawl : " + data.obj.crawltime + "ms</h5><i onclick='showpost(" + data.obj.id + ")' class='flex fa fa-eye'><h5> Click to read post</h5></i></div></div ><div id='"+data.obj.id+"'class='post'><div> <i onclick='closepost(" + data.obj.id + ")' class='fa fa-close'> </i><p>"+data.obj.articles+"</p><h2>Responses</h2><ul>"+comments+"</ul></div ></div >";
+            particularcard.innerHTML = "<div class='postpreview'><figure><img src =" + data.obj.imageurl + "></figure ><div class='details'><h2>" + data.obj.titlename + "</h2><h5>Author : " + data.obj.username + "</h5><h5>Reading Time : " + data.obj.readingtime + "min Read</h5><h5>Time to crawl : " + data.obj.crawltime + "ms</h5><a href='/getpost/"+data.obj.postid+"'><i class='flex fa fa-eye'><h5> Click to read post</h5></i></a></div></div >";
                 var h5=document.createElement('h5');
                 h5.className="classh5";
                 h5.innerHTML="Related Tags :";
@@ -146,23 +143,6 @@
                 particularcard.appendChild(ul);
         });
 
-
-        
-        
-
-
-
-        //showpost function
-        function showpost(id) {
-            document.getElementById(id).style.display = "block";
-        }
-
-
-        //function closepost
-
-        function closepost(id) {
-            document.getElementById(id).style.display = "none";
-        }
     </script>
 
 </body>

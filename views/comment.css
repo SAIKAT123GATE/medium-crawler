@@ -1,0 +1,48 @@
+header {
+  background-color: black;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.posts h2 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.posts p {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.comments {
+  padding-top: 1rem;
+}
+
+.comments h2 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.comments ol {
+  list-style: decimal;
+  padding-left: 1rem;
+}
+
+.comments ol li {
+  line-height: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.comments ol li h5 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+/*# sourceMappingURL=comment.css.map */
